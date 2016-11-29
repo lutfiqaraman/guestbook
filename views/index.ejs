@@ -1,0 +1,23 @@
+<% include header %>
+
+<% if (entries.length) { %>
+<% entries.forEach(function (data) { %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="text-muted pull-right">
+            <%= data.published %>
+        </div>
+        <div>
+            <%= data.title %>
+        </div>
+    </div>
+    <div class="panel-body">
+        <%= data.content %>
+    </div>
+</div>
+<% }) %>
+<% } else { %>
+No entries! <a href="/new-entry">Add one!</a>
+<% } %>
+
+<% include footer %>
