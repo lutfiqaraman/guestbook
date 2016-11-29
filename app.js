@@ -37,12 +37,12 @@ app.post("/new-entry", function(request, response) {
     var hour = dateObj.getHours();
     var minute = dateObj.getMinutes();
 
-    var newdate = day + "/" + month + "/" + year + " - " + hour + ":" + minute;
+    var publishDate = day + "/" + month + "/" + year + " - " + hour + ":" + minute;
 
     entries.push({
         title: request.body.title,
         content: request.body.body,
-        published: "Date: " + newdate
+        published: "Date: " + publishDate
     });
 
     response.redirect("/");
